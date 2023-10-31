@@ -1,13 +1,196 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat&family=Prompt:wght@200;300&display=swap');
+
+
+* {transition: 2s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+    
+    --text-color: #ffffff;
+    --bg-url: url(../public//assets/bg-mobile.jpg);
+    --img-perfil: url(../public/assets/avatar.png);
+    --color-input: rgba(255, 255, 255, 0.1);
+    --color-input-hover:rgba(255, 255, 255, 0.05);
+    --border-input: 1px solid rgba(68, 68, 68, 0.5);
+    --border-input-hover:  1.5px solid rgb(255, 255, 255);
+    --bg-switch: url(../public/assets/moon.png);
+
+}
+
+.light{
+        
+    --text-color: #000000;
+    --bg-url: url(../public/assets/bg-mobile-light.jpg);
+    --img-perfil: url(../public/assets/avatar-light.png);
+    --color-input: rgba(255, 255, 255, 0.1);
+    --color-input-hover:rgba(0, 0, 0, 0.103);
+    --border-input: 1px solid rgb(199, 199, 199);
+    --border-input-hover:  1.5px solid rgba(63, 63, 63, 0.445);
+    --bg-switch: url(../public/assets/sun.png);
+
+
+    
+}
+
+body *{
+    
+    color: var(--text-color);
+}
+
+
+body { 
+    font-family: 'Inter', sans-serif;
+    background-image: var(--bg-url);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    zoom: 75%;
+}
+
+
+#container{
+    width: 360px;
+    height: 712px;
+    margin: auto;
+    padding: 56px 24px 0px 24px; 
+
+}
+
+#profile{
+    padding: 24px;
+}
+
+.img{
+    background-image: var(--img-perfil);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+}
+
+#profile .img{
+
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px black;
+    display: block;
+    margin: auto;
+}
+
+#profile p{
+
+margin-top: 25px;
+font-size: 26px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+text-align: center ;
+}
+
+#switch{
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button{
+    width: 32px;
+    height: 32px;
+    background: var(--bg-switch) no-repeat center;
+    background-size: 32px;
+    border:0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -2px;
+    z-index: 1;
+    transform: translateY(-50%);
+    transition: border 1s;
+}
+
+.light #switch button{
+    right: -2px;
+    left: initial;
+}
+
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background-color: var(--color-input-hover);
+    border: 1px solid var(--border-input-hover);
+    backdrop-filter: blur(4px);
+    border-radius: 9999px;
+    -webkit-backdrop-filter: blur(4px);
+
+}
+
+
+
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0px;
+}
+
+li a {
+    font-size: 14px;
+    display: flex;
+    padding: 16px 24px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-input);
+    border: var(--border-input);
+    border-radius: 8px;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration: none;
+
+    transition: background 1s;
+}
+
+li a:hover {
+
+    background-color: var(--color-input-hover);
+    border:var(--border-input-hover);
+}
+
+#social-links{
+    display: flex;
+    justify-content: center;
+    padding-top: 24px;
+    font-size: 24px;
+}
+
+#social-links a{
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 1s;
+    border-radius: 50%;
+}
+
+#social-links a:hover{
+    background-color: var(--color-input-hover);
+}
+#switch button:hover{
+    margin-right: -5px;
+    border: 20px solid var(--color-input-hover);
+}
+footer{
+    font-size: 14px;
+    padding: 24px 0;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: blueviolet;
 }
